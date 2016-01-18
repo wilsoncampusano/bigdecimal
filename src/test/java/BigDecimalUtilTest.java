@@ -1,32 +1,51 @@
-import org.junit.Assert;
+import bigdecimal.ComparableBigDecimal;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 
 import static bigdecimal.BigDecimalUtil.*;
-import static bigdecimal.ComparableBigDecimal.isZeroOrNull;
+import static bigdecimal.ComparableBigDecimal.*;
+import static org.junit.Assert.*;
 
 
 /**
  * Created by wicampusano on 11/21/2015.
  */
 public class BigDecimalUtilTest {
+    public static final String MESSAGE ="COMPARISON NOT MATCH";
 
+    public void assertThatABigDecimal(BigDecimal value, ComparableBigDecimal comparableBigDecimal) {
+        assertTrue(MESSAGE, theValue(value, comparableBigDecimal));
+    }
 
     @Test
     public void checkZeroOrNull(){
         BigDecimal zero = BigDecimal.ZERO;
         BigDecimal nulL = null;
+        BigDecimal value = new BigDecimal(323);
 
-        Assert.assertTrue("fails: is not zero" , theValue(zero, isZeroOrNull()));
-        Assert.assertTrue("fails: is not null", theValue(nulL, isZeroOrNull()));
+        assertTrue(theValue(zero, isZeroOrNull()));
+        assertTrue(theValue(nulL, isZeroOrNull()));
+        assertFalse(theValue(value, isZeroOrNull()));
     }
 
     @Test
-    public void aValueOf232IsNotZeroOrNull(){
-        BigDecimal value = new BigDecimal(323);
+    public void checkForEqualValues(){
 
-        Assert.assertFalse("fails: is not zero or null", theValue(value, isZeroOrNull()));
+        BigDecimal value = new BigDecimal(323);
+        BigDecimal anotherValue = new BigDecimal(324);
+
+        assertTrue(theValue(value, isEqualTo(value)));
+        assertFalse(theValue(value, isEqualTo(anotherValue)));
+    }
+
+    @Test
+    public void checkForNonEqualValues(){
+
+        BigDecimal value = new BigDecimal(323);
+        BigDecimal anotherValue = new BigDecimal(324);
+
+        assertTrue(theValue(value, isNotEqualTo(anotherValue)));
     }
 
 }

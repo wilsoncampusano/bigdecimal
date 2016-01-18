@@ -7,15 +7,42 @@ import java.util.Objects;
  */
 @FunctionalInterface
 public interface ComparableBigDecimal {
-    boolean compareTo(BigDecimal igualando);
+    boolean compareTo(BigDecimal target);
 
     static ComparableBigDecimal isZeroOrNull(){
-        return igualando -> {
-            if(Objects.isNull(igualando))
-                return true;
-            if(igualando.compareTo(BigDecimal.ZERO) == 0)
+        return source -> {
+            if (isNull(source)) return true;
+            if(source.compareTo(BigDecimal.ZERO) == 0)
                 return true;
             return false;
         };
+    }
+
+
+    static ComparableBigDecimal isEqualTo(BigDecimal target) {
+        return source -> {
+            if(isNull(target)) return true;
+            if(source.compareTo(target) == 0)
+                return true;
+            return false;
+        };
+    }
+
+
+    static ComparableBigDecimal isNotEqualTo(BigDecimal target) {
+        return source ->{
+            if(isNull(target)) return true;
+            if((source.compareTo(target) != 0))
+                return true;
+            return false;
+        };
+
+    }
+
+
+    static boolean isNull(BigDecimal igualando) {
+        if(Objects.isNull(igualando))
+            return true;
+        return false;
     }
 }

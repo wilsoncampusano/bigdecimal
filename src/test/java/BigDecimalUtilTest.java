@@ -17,10 +17,16 @@ public class BigDecimalUtilTest {
     public void checkZeroOrNull(){
         BigDecimal zero = BigDecimal.ZERO;
         BigDecimal nulL = null;
+
+        Assert.assertTrue("fails: is not zero" , theValue(zero, isZeroOrNull()));
+        Assert.assertTrue("fails: is not null", theValue(nulL, isZeroOrNull()));
+    }
+
+    @Test
+    public void aValueOf232IsNotZeroOrNull(){
         BigDecimal value = new BigDecimal(323);
 
-        Assert.assertTrue("fails: is not zero" , checkThat(zero, isZeroOrNull()));
-
+        Assert.assertFalse("fails: is not zero or null", theValue(value, isZeroOrNull()));
     }
 
 }

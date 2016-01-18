@@ -9,3 +9,5 @@
 .idea/uiDesigner.xml
 .idea/workspace.xml
 decimalUtil.iml
+*.xml
+*.class

@@ -6,7 +6,7 @@ import java.math.BigDecimal;
  */
 public class BigDecimalUtil {
 
-    public static boolean checkThat(BigDecimal source, ComparableBigDecimal comparableBigDecimal){
-        return false;
+    public static boolean theValue(BigDecimal source, ComparableBigDecimal comparableBigDecimal){
+        return comparableBigDecimal.compareTo(source);
     }
 }

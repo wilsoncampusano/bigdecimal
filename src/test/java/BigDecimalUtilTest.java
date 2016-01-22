@@ -45,7 +45,15 @@ public class BigDecimalUtilTest {
         BigDecimal value = new BigDecimal(323);
         BigDecimal anotherValue = new BigDecimal(324);
 
-        assertTrue(theValue(value, isNotEqualTo(anotherValue)));
+        assertThatABigDecimal(value, isNotEqualTo(anotherValue));
+    }
+
+    @Test
+    public void checkForGreaterThanValues(){
+        BigDecimal minorValue =  new BigDecimal(1000);
+        BigDecimal greatervalue = new BigDecimal(1000.1);
+
+        assertThatABigDecimal(greatervalue, isGreaterThan(minorValue));
     }
 
 }

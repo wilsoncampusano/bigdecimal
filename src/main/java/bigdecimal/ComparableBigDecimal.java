@@ -7,7 +7,7 @@ import java.util.Objects;
  */
 @FunctionalInterface
 public interface ComparableBigDecimal {
-    boolean compareTo(BigDecimal target);
+    boolean compareTo(BigDecimal value);
 
     static ComparableBigDecimal isZeroOrNull(){
         return source -> {
@@ -19,24 +19,32 @@ public interface ComparableBigDecimal {
     }
 
 
-    static ComparableBigDecimal isEqualTo(BigDecimal target) {
+    static ComparableBigDecimal isEqualTo(BigDecimal value) {
         return source -> {
-            if(isNull(target)) return true;
-            if(source.compareTo(target) == 0)
+            if(isNull(value)) return true;
+            if(source.compareTo(value) == 0)
                 return true;
             return false;
         };
     }
 
 
-    static ComparableBigDecimal isNotEqualTo(BigDecimal target) {
+    static ComparableBigDecimal isNotEqualTo(BigDecimal value) {
         return source ->{
-            if(isNull(target)) return true;
-            if((source.compareTo(target) != 0))
+            if(isNull(value)) return true;
+            if((source.compareTo(value) != 0))
                 return true;
             return false;
         };
 
+    }
+
+    static ComparableBigDecimal isGreaterThan(BigDecimal minorValue) {
+        return source ->{
+            if(isNull(minorValue)) return false;
+            if(source.compareTo(minorValue) == 1) return true;
+            return false;
+        };
     }
 
 

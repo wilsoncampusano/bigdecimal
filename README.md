@@ -6,8 +6,6 @@ Look this :(
 
 ```java
 	//some imports ...
-    import static bigdecimal.BigDecimalUtil.*;
-	import static bigdecimal.ComparableBigDecimal;
 
 	//some code...
     BigDecimal balance = account.getBalance();

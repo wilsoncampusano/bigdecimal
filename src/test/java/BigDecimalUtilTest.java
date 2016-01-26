@@ -52,4 +52,12 @@ public class BigDecimalUtilTest {
         assertThatABigDecimal(greatervalue, isGreaterThan(minorValue));
     }
 
+    @Test
+    public void checkForLessThanValues(){
+
+        BigDecimal lessValue =  new BigDecimal(999.9);
+        BigDecimal greaterValue = new BigDecimal(1000);
+
+        assertThatABigDecimal(lessValue, isLessThan(greaterValue));
+    }
 }

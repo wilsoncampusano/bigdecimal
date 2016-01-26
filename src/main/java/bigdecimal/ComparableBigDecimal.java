@@ -44,6 +44,14 @@ public interface ComparableBigDecimal {
         };
     }
 
+    static ComparableBigDecimal isLessThan(BigDecimal greaterValue) {
+        return source ->{
+            if(isNull(greaterValue)) return false;
+            if(source.compareTo(greaterValue) == -1) return true;
+            return false;
+        };
+    }
+
 
     static boolean isNull(BigDecimal igualando) {
         if(Objects.isNull(igualando))

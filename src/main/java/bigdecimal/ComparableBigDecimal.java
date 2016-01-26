@@ -2,9 +2,6 @@ package bigdecimal;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-/**
- * Created by wicampusano on 11/21/2015.
- */
 @FunctionalInterface
 public interface ComparableBigDecimal {
     boolean compareTo(BigDecimal value);
@@ -43,6 +40,14 @@ public interface ComparableBigDecimal {
         return source ->{
             if(isNull(minorValue)) return false;
             if(source.compareTo(minorValue) == 1) return true;
+            return false;
+        };
+    }
+
+    static ComparableBigDecimal isLessThan(BigDecimal greaterValue) {
+        return source ->{
+            if(isNull(greaterValue)) return false;
+            if(source.compareTo(greaterValue) == -1) return true;
             return false;
         };
     }

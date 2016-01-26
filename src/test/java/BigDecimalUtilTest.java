@@ -7,10 +7,6 @@ import static bigdecimal.BigDecimalUtil.*;
 import static bigdecimal.ComparableBigDecimal.*;
 import static org.junit.Assert.*;
 
-
-/**
- * Created by wicampusano on 11/21/2015.
- */
 public class BigDecimalUtilTest {
     public static final String MESSAGE ="COMPARISON NOT MATCH";
 
@@ -56,4 +52,12 @@ public class BigDecimalUtilTest {
         assertThatABigDecimal(greatervalue, isGreaterThan(minorValue));
     }
 
+    @Test
+    public void checkForLessThanValues(){
+
+        BigDecimal lessValue =  new BigDecimal(999.9);
+        BigDecimal greaterValue = new BigDecimal(1000);
+
+        assertThatABigDecimal(lessValue, isLessThan(greaterValue));
+    }
 }

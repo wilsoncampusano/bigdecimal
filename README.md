@@ -2,7 +2,7 @@
 
 
 
-Look this :(
+Look this
 
 ```java
 	//some imports ...
@@ -16,7 +16,9 @@ Look this :(
 
 ```
 
-And now look this!
+It's not clean code :tear: ...
+
+Apply **ComparableBigDecimal**.... and now look this! :+1:
 
 ```java
 	//some imports ...
@@ -31,4 +33,9 @@ And now look this!
     }
 ```
 
-:+1:
+### Todos
+
+ - ~~Zero or null~~
+ - ~~Igual to~~
+ - ~~Greater than~~
+ - ~~Less than~~

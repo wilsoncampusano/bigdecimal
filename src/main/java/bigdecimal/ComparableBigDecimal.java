@@ -23,7 +23,7 @@ public interface ComparableBigDecimal {
     static ComparableBigDecimal isNotEqualTo(BigDecimal value) {
         return source ->{
             if(isNull(value)) return true;
-            return ((source.compareTo(value) != 0));
+            return (source.compareTo(value) != 0);
         };
 
     }

@@ -11,7 +11,7 @@ public class BigDecimalUtilTest {
     public static final String MESSAGE ="COMPARISON NOT MATCH";
 
     public void assertThatABigDecimal(BigDecimal value, ComparableBigDecimal comparableBigDecimal) {
-        assertTrue(MESSAGE, theValue(value, comparableBigDecimal));
+        assertTrue(MESSAGE, value(value, comparableBigDecimal));
     }
 
     @Test
@@ -20,9 +20,9 @@ public class BigDecimalUtilTest {
         BigDecimal nulL = null;
         BigDecimal value = new BigDecimal(323);
 
-        assertTrue(theValue(zero, isZeroOrNull()));
-        assertTrue(theValue(nulL, isZeroOrNull()));
-        assertFalse(theValue(value, isZeroOrNull()));
+        assertTrue(value(zero, isZeroOrNull()));
+        assertTrue(value(nulL, isZeroOrNull()));
+        assertFalse(value(value, isZeroOrNull()));
     }
 
     @Test
@@ -31,8 +31,8 @@ public class BigDecimalUtilTest {
         BigDecimal value = new BigDecimal(323);
         BigDecimal anotherValue = new BigDecimal(324);
 
-        assertTrue(theValue(value, isEqualTo(value)));
-        assertFalse(theValue(value, isEqualTo(anotherValue)));
+        assertTrue(value(value, isEqualTo(value)));
+        assertFalse(value(value, isEqualTo(anotherValue)));
     }
 
     @Test

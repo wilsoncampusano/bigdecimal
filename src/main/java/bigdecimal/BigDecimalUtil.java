@@ -1,9 +1,10 @@
 package bigdecimal;
+
 import java.math.BigDecimal;
 
 public class BigDecimalUtil {
 
-    public static boolean theValue(BigDecimal source, ComparableBigDecimal comparableBigDecimal){
-        return comparableBigDecimal.compareTo(source);
+    public static boolean value(BigDecimal value, ComparableBigDecimal comparator) {
+        return comparator.compareTo(value);
     }
 }

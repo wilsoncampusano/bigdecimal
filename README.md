@@ -28,7 +28,7 @@ Apply **ComparableBigDecimal**.... and now look this! :+1:
 	//some code...
     BigDecimal balance = account.getBalance();
 
-    if(theValue(balance, isZeroOrNull()){
+    if(value(balance, isZeroOrNull()){
     	//.. do something
     }
 ```

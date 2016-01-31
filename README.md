@@ -22,8 +22,8 @@ Apply **ComparableBigDecimal**.... and now look this! :+1:
 
 ```java
 	//some imports ...
-    import static bigdecimal.BigDecimalUtil.*;
-	import static bigdecimal.ComparableBigDecimal;
+    import static BigDecimalUtil.*;
+	import static ComparableBigDecimal;
 
 	//some code...
     BigDecimal balance = account.getBalance();

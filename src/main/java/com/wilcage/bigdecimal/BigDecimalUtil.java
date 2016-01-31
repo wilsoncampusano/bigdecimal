@@ -1,4 +1,4 @@
-package bigdecimal;
+package com.wilcage.bigdecimal;
 
 import java.math.BigDecimal;
 

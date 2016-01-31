@@ -1,10 +1,11 @@
-import bigdecimal.ComparableBigDecimal;
+package com.wilcage.bigdecimal;
+import com.wilcage.bigdecimal.ComparableBigDecimal;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 
-import static bigdecimal.BigDecimalUtil.*;
-import static bigdecimal.ComparableBigDecimal.*;
+import static com.wilcage.bigdecimal.BigDecimalUtil.*;
+import static com.wilcage.bigdecimal.ComparableBigDecimal.*;
 import static org.junit.Assert.*;
 
 public class BigDecimalUtilTest {

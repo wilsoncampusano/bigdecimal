@@ -1,4 +1,4 @@
-package bigdecimal;
+package com.wilcage.bigdecimal;
 import java.math.BigDecimal;
 import static java.util.Objects.isNull;
 
@@ -25,7 +25,6 @@ public interface ComparableBigDecimal {
             if(isNull(value)) return true;
             return (source.compareTo(value) != 0);
         };
-
     }
 
     static ComparableBigDecimal isGreaterThan(BigDecimal minorValue) {

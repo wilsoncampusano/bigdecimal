@@ -1,6 +1,6 @@
 package bigdecimal;
 import java.math.BigDecimal;
-import java.util.Objects;
+import static java.util.Objects.isNull;
 
 @FunctionalInterface
 public interface ComparableBigDecimal {
@@ -9,29 +9,21 @@ public interface ComparableBigDecimal {
     static ComparableBigDecimal isZeroOrNull(){
         return source -> {
             if (isNull(source)) return true;
-            if(source.compareTo(BigDecimal.ZERO) == 0)
-                return true;
-            return false;
+            return (source.compareTo(BigDecimal.ZERO) == 0);
         };
     }
-
 
     static ComparableBigDecimal isEqualTo(BigDecimal value) {
         return source -> {
             if(isNull(value)) return true;
-            if(source.compareTo(value) == 0)
-                return true;
-            return false;
+            return (source.compareTo(value) == 0);
         };
     }
-
 
     static ComparableBigDecimal isNotEqualTo(BigDecimal value) {
         return source ->{
             if(isNull(value)) return true;
-            if((source.compareTo(value) != 0))
-                return true;
-            return false;
+            return ((source.compareTo(value) != 0));
         };
 
     }
@@ -39,23 +31,14 @@ public interface ComparableBigDecimal {
     static ComparableBigDecimal isGreaterThan(BigDecimal minorValue) {
         return source ->{
             if(isNull(minorValue)) return false;
-            if(source.compareTo(minorValue) == 1) return true;
-            return false;
+            return (source.compareTo(minorValue) == 1);
         };
     }
 
     static ComparableBigDecimal isLessThan(BigDecimal greaterValue) {
         return source ->{
             if(isNull(greaterValue)) return false;
-            if(source.compareTo(greaterValue) == -1) return true;
-            return false;
+            return (source.compareTo(greaterValue) == -1);
         };
-    }
-
-
-    static boolean isNull(BigDecimal igualando) {
-        if(Objects.isNull(igualando))
-            return true;
-        return false;
     }
 }
